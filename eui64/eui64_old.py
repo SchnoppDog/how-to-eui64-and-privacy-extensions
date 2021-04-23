@@ -1,3 +1,4 @@
+# Old version of how I created the python-script to generate the eui64-address.
 from getmac import get_mac_address
 
 win_mac     = get_mac_address(ip="192.168.0.6")
