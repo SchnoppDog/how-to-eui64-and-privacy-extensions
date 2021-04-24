@@ -72,11 +72,12 @@ def peSHA1():
     ntp     = datetime.now(tz=None).strftime('%H:%M:%S') #64 Bit NTP
     secret  = ntp + macAddr
     iidHash = hashlib.sha1(secret.encode('utf-8')).hexdigest()
+    print(iidHash)
     iid     = iidHash[:16]
     iid     = iid[:4] + ':' + iid[4:8] + ':' + iid[8:12] + ':' + iid[12:16]
 
     print('With the use of NTP and MAC-address in a sha1-digest your interface identifier should be: '+ iid)
 
     
-peMDFive()
+# peMDFive()
 peSHA1()
