@@ -6,17 +6,17 @@ I am not an expert in python or in IPv6. The informations presented here are bas
 
 Also please keep in mind that I will not cover much history about IPv6 or the eui-64 method.
 
-## What is EUI-64?
+## What Is EUI-64?
 
-EUI-64 is a method to generate a valid 64 bit interface identifier for the respective host-system. EUI-64 has been the first version for creating interface identifiers. Today eui-64 is only used for link-local addresses (local-scope, not routeable) since this method has a big security flaw. This security flaw includes that you can calculate the mac-address of the connecting device from the IPv6s interface identifier as we will see later. With this flaw you have been able to track the geo-location of devices in i.e. your enterprise WiFi-network. This is quite unpleasent since workers don't want to be tracked permantly. This is one security flaw with eui64 and there are many more.
+EUI-64 is a method to generate a valid 64 bit interface identifier for the respective host-system. EUI-64 has been the first version for creating interface identifiers. Today eui-64 is only used for link-local addresses (local-scope, not routeable) since this method has a big security flaw. This security flaw includes that you can calculate the mac-address of the connecting device from the IPv6s interface identifier, as we will see later. With this flaw you have been able to track the geo-location of devices in i.e. your enterprise WiFi-network. This is quite unpleasent since workers don't want to be tracked permantly. This is one security flaw with eui64 and there are many more.
 
 ## Create EUI-64-Address: The Simple Way
 
-If you want a simple explanation on how a interface identifier is created with the eui-64 method here you go:
+If you want a simple explanation on how an interface identifier is created with the eui-64 method here you go:
 
   1. Split the mac-address in half.
   2. Add `ff:fe` into the middle.
-  3. Flip the seventh bit to either 1 (if seventh bit is 0) or 0 (if seventh bit is 1, see notes)
+  3. Invert the seventh bit to either 1 (if seventh bit is 0) or 0 (if seventh bit is 1, see notes)
   4. Create the IPv6-Address.
 
 ## Create EUI-64-Address: Detailed
@@ -41,9 +41,9 @@ Now that we have the two 24 bits-blocks we need to insert `FF:FE` into the middl
 00:1A:3F + FF:FE + F1:4C:6C ==> 00:1A:3F:FF:FE:F1:4C:6C
 ```
 
-### 3. Flip The Seventh Bit
+### 3. Invert The Seventh Bit
 
-Now that we inserted `FF:FE` into the middle of our mac-address we need to flip the seventh bit on the beginning of the mac-address. **Remember**: each block of a mac-address has 8 bits. With that in mind we need the first two hex-digits of the mac-address which are `00`. For simple understanding we convert the hex-digits into binary:
+Now that we inserted `FF:FE` into the middle of our mac-address we need to invert the seventh bit on the beginning of the mac-address. **Remember**: each block of a mac-address has 8 bits. With that in mind we need the first two hex-digits of the mac-address which are `00`. For simple understanding we convert the hex-digits into binary:
 
 ```txt
 1. First 0 to binary: 0000
@@ -51,7 +51,7 @@ Now that we inserted `FF:FE` into the middle of our mac-address we need to flip 
 ==> 0000 0000 ==> 00000000
 ```
 
-Now we look at the seventh bit. If it's a `0` we need to set it to `1`. If the seventh bit is a `1` we need to set it to `0`* (see notes). In our case everything is `0` so we can assume our seventh bit will also be `0`. In that case we need to invert it like this:
+Now we look at the seventh bit. If it's a `0` we need to set it to `1`. If the seventh bit is a `1` we need to set it to `0` (see notes). In our case everything is `0` so we can assume our seventh bit will also be `0`. In that case we need to invert it like this:
 
 ```txt
 0000 0000
@@ -68,7 +68,7 @@ Now we need to convert the binary digits into hex again to get our mac-address b
 ==> 02:1A:3F:FF:FE:F1:4C:6C
 ```
 
-### Create The IPv6-Address
+### 4. Create The IPv6-Address
 
 Our last step is fairly simple: create an IPv6-address with the available blocks. We know that a IPv6-address is in total 128 bits (or 16 bytes). Since we need to create our interface identifier we only need to set the last 64 bits. An IPv6-address is divided into 8 16 bits blocks. In our case we only need to create half of the blocks. With that in mind we can put together our interface identifier like this:
 
@@ -80,11 +80,11 @@ Voilà you just created your eui-64-based interface identifier.
 
 ## Back To The Security-Flaw
 
-Now let's get back to the security flaw I mentioned earlier in this document. If you payed attention you now can easily calculate the mac-address from the eui-64 interface identifier. You only need to reverse the steps we just did. Simple right? That's why a new standard had to be developed. This standard is now specified under 'IPv6 Privacy Extentions'. But even **with** privacy extentions enabled you might run into errors. If you want to know more just have a look in the readme-file for IPv6 privacy extentions.
+Now let's get back to the security flaw I mentioned earlier in this document. If you payed attention you now can easily calculate the mac-address from the eui-64 interface identifier. You only need to reverse the steps we just did. Simple right? That's why a new standard had to be developed. This standard is now specified under 'IPv6 Privacy Extensions'. But even **with** privacy extensions enabled you might run into errors. If you want to know more just have a look in the readme-file for IPv6 privacy extensions.
 
 ## Notes
 
-As mentioned in the text to create the eui-64 interface identifier you need to flip the seventh bit in the last step. Now there are some approaches I like to discuss. As mentioned in the rfc-4291 for the eui-64 method the numbers `1` and `0` have different meanings. For `1` it's said that this address is specified as global/universal-scope whereas `0` represents the local-scope of an address.
+As mentioned in the text to create the eui-64 interface identifier you need to invert the seventh bit in the last step. Now there are some approaches I like to discuss. As mentioned in the rfc-4291 for the eui-64 method the numbers `1` and `0` have different meanings. For `1` it's said that this address is specified as global/universal-scope whereas `0` represents the local-scope of an address.
 
 I know wikipedia isn't a reliable source to refer to for information, but in its entry for the eui-64 method nothing special is noted about the numbers `1` and `0` when flipping the seventh bit.
 
