@@ -2,7 +2,7 @@
 
 ## About
 
-This is a little GitHub-Repository explaining how the eui-64 method and privacy-extentions work in IPv6. If you're german you can use the german-readme-files in `/README_DE` if you don't want to read the english readme-files. The explanation for each method is described in the respective folder.
+This is a little GitHub-Repository explaining how the eui-64 method and privacy-extentions work in IPv6. If you're german you can use the german-readme-files in `/README_DE` (will be added in the future!) if you don't want to read the english readme-files. The explanation for each method is described in the respective folder.
 
 ## Test EUI64 And Privacy-Extentions
 
