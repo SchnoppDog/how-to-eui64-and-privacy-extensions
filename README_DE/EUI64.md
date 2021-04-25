@@ -87,7 +87,7 @@ Wie bereits im Text besprochen muss das siebte Bit der MAC-Adresse umgekehrt wer
 
 Auch wenn Wikipedia generell keine vertrauenswürdige Quelle ist, ist dennoch anzumerken, dass es keinen Eintrag darüber gibt, welche Bedeutung das siebte Bit tatsächlich besitzt.
 
-Die Webseite `Elektronik-Kompendium` merkt hingegen an, dass es sich bei einer `1` des siebten Bits um eine erdachte Adresse (Fantasieadresse) handeln würde. Eine `0` soll jedoch darauf hinweisen, dass die MAC-Adresse von der IEEE abstammt. Der nachfolgende Satz steht jedoch im Gegensatz zu dem vorherigen. Hier wird nämlich beschrieben, dass bei einer ausgedachten Adresse das Bit auf `0` gesetzt wird. Entweder das ist ein Schreibrfehler oder die Webseite vermittelt dies falsch.
+Die Webseite `Elektronik-Kompendium` merkt hingegen an, dass es sich bei einer `1` des siebten Bits um eine erdachte Adresse (Fantasieadresse) handeln würde. Eine `0` soll darauf hinweisen, dass die MAC-Adresse von der IEEE abstammt. Der nachfolgende Satz steht jedoch im Gegensatz zu dem vorherigen. Hier wird nämlich beschrieben, dass bei einer ausgedachten Adresse das Bit auf `0` gesetzt wird. Entweder ist das ein Schreibrfehler oder die Webseite vermittelt diese Informationen falsch.
 
 Ich persönlich würde sagen, dass es in Ordnung ist weiterhin die bekannte Vorgehensweise zu benutzen (aus 1 zu 0 und aus 0 zu 1). Jedoch sollten Sie die Anmerkung der RFC im Hinterkopf behalten.
 
