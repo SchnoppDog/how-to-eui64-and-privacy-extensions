@@ -86,7 +86,7 @@ Now let's get back to the security flaw I mentioned earlier in this document. If
 
 As mentioned in the text to create the eui-64 interface identifier you need to invert the seventh bit in the last step. Now there are some approaches I like to discuss. As mentioned in the rfc-4291 for the eui-64 method the numbers `1` and `0` have different meanings. For `1` it's said that this address is specified as global/universal-scope whereas `0` represents the local-scope of an address.
 
-I know wikipedia isn't a reliable source to refer to for information, but in its entry for the eui-64 method nothing special is noted about the numbers `1` and `0` when flipping the seventh bit.
+I know wikipedia isn't a reliable source to refer to for information, but in its entry for the eui-64 method nothing special is noted about the numbers `1` and `0` when inverting the seventh bit.
 
 As for the german website 'elektronik-kompendium' it roughly mentions that the number `0` stays for a mac-address assigned by the IEEE. For the number `1` it is said that it's something like a non-real 'fantasy'-like address. But in the following sentence they tell that a made-up (fantasy) mac-address has a `0` as seventh bit. This is a contradiction in terms of their previous mentioning on the fantasy-like mac-address. Either they misspelled their sentences or they don't know the actual meaning for these numbers.
 

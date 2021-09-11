@@ -2,11 +2,11 @@
 
 ## Disclaimer
 
-Ich bin kein Experte, was Python-Programmierung oder die Themen rund um IPv6 angeht. Alle hier aufgeführten Informationen basieren auf mein Wissen über die Netzwerktechnik, als auch Python. Bitte nehmen Sie in Kenntnis, dass die aufgeführten Informationen keine Garantie für die absolute Richtigkeit der Methode übernehmen. Daher ist es ratsam sich auch andere Quellen anzuschauen, um sich mehr über das Thema zu informieren. Quellen, welche ich für meine Recherche benutzt habe, finden Sie am Ende des Dokuments.
+Ich bin kein Experte, was Python-Programmierung oder die Themen rund um IPv6 angeht. Alle hier aufgeführten Informationen basieren auf meinem Wissen über die Netzwerktechnik, als auch Python. Bitte nimm in Kenntnis, dass die aufgeführten Informationen keine Garantie für die absolute Richtigkeit der Methode übernehmen. Daher ist es ratsam sich auch andere Quellen anzuschauen, um sich mehr über das Thema zu informieren. Quellen, welche ich für meine Recherche benutzt habe, findest du am Ende des Dokuments.
 
 ## Was ist EUI-64?
 
-EUI-64 ist eine Methode, um einen 64-Bit Interface Identifier für eine IPv6-Adresse eines Host-System zu erstellen. Das EUI-64-Verfahren war die erste Herangehensweise zur Erstellung eines Interface Identifiers. Heutzutage wird EUI-64, wenn überhaupt, ausschließlich für die Erstellung von Link-Local-Adressen benutzt, da diese eine große Sicherheitsschwachstelle besitzen. Diese Schwachstelle beschreibt, dass es möglich ist die MAC-Adresse eines Clients aus dem EUI-64 erstellten Interface Identifier herzuleiten. Wie das funktioniert werden Sie später erfahren. Mit dieser Schwachstelle war es möglich technische Geräte und somit auch Personen zu Orten und ihre Bewegmuster aufzuzeichnen. Verständlicherweise ist das unangenehm, da z.B. Mitarbeiter von Unternehmen nicht dauerhaft verfolgt werden möchten. Das ist jedoch nur eine Schwachstelle von vielen weiteren.
+EUI-64 ist eine Methode, um einen 64-Bit Interface Identifier für eine IPv6-Adresse eines Host-System zu erstellen. Das EUI-64-Verfahren war die erste Herangehensweise zur Erstellung eines Interface Identifiers. Heutzutage wird EUI-64, wenn überhaupt, ausschließlich für die Erstellung von Link-Local-Adressen benutzt, da diese eine große Sicherheitsschwachstelle besitzen. Diese Schwachstelle beschreibt, dass es möglich ist die MAC-Adresse eines Clients aus dem EUI-64 erstellten Interface Identifier herzuleiten. Wie das funktioniert wirst du später erfahren. Mit dieser Schwachstelle war es möglich technische Geräte und somit auch Personen zu Orten und ihre Bewegungsmuster aufzuzeichnen. Verständlicherweise ist das unangenehm, da z.B. Mitarbeiter von Unternehmen nicht dauerhaft verfolgt werden möchten. Das ist jedoch nur eine Schwachstelle von vielen weiteren.
 
 ## Erstellung der EUI-64-Adresse: Die einfache Art
 
@@ -19,7 +19,7 @@ Im Nachfolgenden wird eine simple Erklärung für die Erstellung des EUI-64 Inte
 
 ## Erstellung der EUI-64-Adresse: Die detaillierte Art
 
-Im Nachfolgenden wird eine detaillierte Erklärung zum Vorgehen aufgezeigt, wenn die oben genannte Erklärung für Sie zu allgemein gehalten ist.
+Im Nachfolgenden wird eine detaillierte Erklärung zum Vorgehen aufgezeigt, wenn die oben genannte Erklärung für dich zu allgemein gehalten ist.
 
 ### 1. Aufteilen der MAC-Adresse
 
@@ -79,7 +79,7 @@ Voilà so haben wir unseren EUI-64 basierten Interface Identifier erfolgreich er
 
 ## Zurück zur Sicherheitsschwachstelle
 
-Kehren wir nun einmal zu meiner im Text erwähnten Sicherheitsschwachstelle zurück. Wenn Sie stark aufgepasst haben, dann sollten Sie nun wissen wie die MAC-Adresse aus der EUI-64-Adresse errechnet werden kann. Dafür müssen Sie nur die angewandten Schritte in umgekehrter Reiehenfolge durchlaufen. Einfach nicht wahr? Das ist mitunter ein Grund, weshalb ein neuer Standard entwickelt werden musste. Dieser Standard ist bekannt und spezifiziert unter dem Namen **IPv6 Privacy Extensions**. Aber selbst **mit** aktivierten Privacy Extensions gibt es Komplikationen. Wenn sie mehr über das Thema `Privacy Extensions` wissen wollen, dann schauen Sie sich die README-Datei für die IPv6 Privacy Extensions an.
+Kehren wir nun einmal zu meiner im Text erwähnten Sicherheitsschwachstelle zurück. Wenn du stark aufgepasst hast, dann solltest du nun wissen wie die MAC-Adresse aus der EUI-64-Adresse errechnet werden kann. Dafür musst du nur die angewandten Schritte in umgekehrter Reiehenfolge durchlaufen. Einfach nicht wahr? Das ist mitunter ein Grund, weshalb ein neuer Standard entwickelt werden musste. Dieser Standard ist bekannt und spezifiziert unter dem Namen **IPv6 Privacy Extensions**. Aber selbst **mit** aktivierten Privacy Extensions gibt es Komplikationen. Wenn du mehr über das Thema `Privacy Extensions` wissen möchtest, dann schau dir die README-Datei für die IPv6 Privacy Extensions an.
 
 ## Notizen
 
@@ -89,7 +89,7 @@ Auch wenn Wikipedia generell keine vertrauenswürdige Quelle ist, ist dennoch an
 
 Die Webseite `Elektronik-Kompendium` merkt hingegen an, dass es sich bei einer `1` des siebten Bits um eine erdachte Adresse (Fantasieadresse) handeln würde. Eine `0` soll darauf hinweisen, dass die MAC-Adresse von der IEEE abstammt. Der nachfolgende Satz steht jedoch im Gegensatz zu dem vorherigen. Hier wird nämlich beschrieben, dass bei einer ausgedachten Adresse das Bit auf `0` gesetzt wird. Entweder ist das ein Schreibrfehler oder die Webseite vermittelt diese Informationen falsch.
 
-Ich persönlich würde sagen, dass es in Ordnung ist weiterhin die bekannte Vorgehensweise zu benutzen (aus 1 zu 0 und aus 0 zu 1). Jedoch sollten Sie die Anmerkung der RFC im Hinterkopf behalten.
+Ich persönlich würde sagen, dass es in Ordnung ist weiterhin die bekannte Vorgehensweise zu benutzen (aus 1 zu 0 und aus 0 zu 1). Jedoch solltest du die Anmerkung der RFC im Hinterkopf behalten.
 
 ## Quellen
 

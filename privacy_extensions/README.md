@@ -49,7 +49,7 @@ d1ccbd1825293666aa4297922ee9ab2c205a6a676f007c97db269d6fb7b9a38d00:1A:3F:FF:FE:F
 de4d64ef06f2869cd3197096c86b7625
 ```
 
-  4. Take the leftmost 64 bits.
+  4. Take the leftmost 64 bits:
 
 ```txt
 de4d64ef06f2869c
