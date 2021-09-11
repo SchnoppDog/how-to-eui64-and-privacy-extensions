@@ -96,7 +96,7 @@ Other than the IETFs rfc for privacy extensions, the german website `elektronik-
 
 ### Privacy Extensions Method 3: Use The System Startup Time
 
-Another approach a teacher of mine suggested, uses the systems startup time accurate to the nanosecond. Together with the hosts mac-address and a hashalgorithm like sha1 or any other creating the IPv6 privacy extensions. To be honest it's quite impossible to turn on two or more systems at the exact same time. There will always be a short delay between each start even if they are timed really good. That's why it should be impossible to generate same hashes. This means that no address-collition would appear in the global address scope. However, this is only theoretical and won't be implemented in future.
+Another approach a former teacher of mine suggested, uses the systems startup time accurate to the nanosecond. Together with the hosts mac-address and a hashalgorithm like sha1 or any other creating the IPv6 privacy extensions. To be honest it's quite impossible to turn on two or more systems at the exact same time. There will always be a short delay between each start even if they are timed really good. That's why it should be impossible to generate same hashes. This means that no address-collition would appear in the global address scope. However, this is only theoretical and won't be implemented in future.
 
 ### The Problem With Privacy Extension: Datasecurity
 
@@ -104,7 +104,7 @@ What if I told you that you could be tracked even with privacy extensions enable
 
 ### Why Using A Constant Interface Identifier When Privacy Extensions Exists?
 
-With privacy extensions enabled your interface identifier is anonymized and changed in a certain period of time. This promotes the usage of privacy extennsions. But there are times when privacy extensions are a big problem. If you want to make a service public like a webserver or something else, chances are that you won't be happy with privacy extensions enbaled. Such public services do need a static public ip-address. With privacy extensions enabled your public ip-address would change quite often. That means you need to disable privacy extensions in order to make your service publicly available.  
+With privacy extensions enabled your interface identifier is anonymized and changes in a certain period of time. This promotes the usage of privacy extennsions. But there are times when privacy extensions are a big problem. If you want to make a service public like a webserver or something else, chances are that you won't be happy with privacy extensions enbaled. Such public services do need a static public ip-address. With privacy extensions enabled your public ip-address would change quite often. That means you need to disable privacy extensions in order to make your service publicly available.  
 
 ## Sources
 
